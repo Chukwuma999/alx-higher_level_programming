@@ -1,2 +1,9 @@
 #!/usr/bin/python3
-print(", ".join("{:02d}".format(i) for i in range(0, 100)))
+
+
+if __name__ == '__main__':
+    for n in range(100):
+        if n != 99:
+            print('{:02d}'.format(n), end=', ')
+        else:
+            print('{:02d}'.format(n))
