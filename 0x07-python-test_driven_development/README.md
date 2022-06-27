@@ -4,7 +4,7 @@
 > doctests, unit tests
 
 ### Description of what each file shows:
-* tests ---------- folder holds all tests and edge case checking
+
 * Files that start with:
 0. function adds two integers
 2. function divides all matrix elements
