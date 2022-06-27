@@ -11,3 +11,4 @@ class Rectangle():
     Defines empty class rectangle
     """
     pass
+    
