@@ -1,17 +1,15 @@
 #!/usr/bin/python3
 """
-Use requests package to make a get request to given URL and display
-the body of response, or error code if error.
+given URL & email as params, display response body utf-8, print error codes
+usage: ./7-error_code.py http://0.0.0.0:5000/status_401
 """
-import sys
+from sys import argv
 import requests
 
+
 if __name__ == "__main__":
-    url = sys.argv[1]
-    r = requests.get(url)
-    try:
-        r.raise_for_status()
-        print(r.text)
-    except Exception as e:
+    r = requests.get(argv[1])
+    if r.status_code >= 400:
         print("Error code: {}".format(r.status_code))
-        
+    else:
+        print(r.text)
