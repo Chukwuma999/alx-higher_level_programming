@@ -1,9 +1,13 @@
 #!/usr/bin/python3
-"""Take in a URL, send request to URL and display value of `X-Request-Id`"""
-import sys
-from urllib import request
+"""
+given URL as parameter, fetch URL and display value from reponse header
+usage: ./1-hbtn_header https://intranet.hbtn.io
+"""
+from sys import argv
+import urllib.request
+
 
 if __name__ == "__main__":
-    with request.urlopen(sys.argv[1]) as res:
-        print(res.info()['X-Request-Id'])
-        
+    req = urllib.request.Request(argv[1])
+    with urllib.request.urlopen(req) as response:
+        print(response.getheader('X-Request-Id'))

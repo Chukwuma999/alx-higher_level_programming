@@ -1,14 +1,13 @@
 #!/usr/bin/python3
 """
-Use requests package to make a post request sending email param
-and display body of response.
+given URL & email as params, send POST req to URL, display response body utf-8
+usage: ./6-post_email.py http://0.0.0.0:5000/post_email hr@holbertonschool.com
 """
-import sys
+from sys import argv
 import requests
 
 if __name__ == "__main__":
-    url = sys.argv[1]
-    payload = {'email': sys.argv[2]}
+    url = argv[1]
+    payload = {'email': argv[2]}
     r = requests.post(url, data=payload)
     print(r.text)
-    
